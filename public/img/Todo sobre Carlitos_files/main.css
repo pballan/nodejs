@@ -1,0 +1,36 @@
+body {
+  background-color: white;
+  margin-left: 20px;
+}
+
+#titulo{
+  background-color: black;
+  margin-left: 35%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 251px;
+  background-repeat: no-repeat;
+  display: block;
+  text-align: center;
+}
+#noticia{
+  margin-top:20px;
+
+}
+
+#logo{
+
+  max-width:100%;
+  max-height:100%;
+
+}
+
+li{
+  list-style-type: none;
+  margin-top: 8%;
+}
+
+footer{
+  margin-top: 60px;
+  text-align: right;
+}

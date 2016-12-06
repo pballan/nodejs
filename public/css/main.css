@@ -1,0 +1,67 @@
+body {
+  background-color: white;
+  margin-left: 20px;
+}
+
+header{
+  background-image: url(../img/Ricardo-Fort2.jpg);
+  height: 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+.textoArticulo{
+  height: 100%;
+  max-height: 200px;
+
+
+}
+
+
+#titulo{
+  height: 251px;
+  background-repeat: no-repeat;
+  display: block;
+  text-align: center;
+}
+
+#arti > li{
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+#logo{
+
+  max-width:100%;
+  max-height:100%;
+
+}
+
+.paginas{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  list-style-type: none;
+  margin-top: 8%;
+  display: grid;
+}
+
+ul > li {
+    display: inline-block;
+}
+
+footer{
+  margin-top: 60px;
+  text-align: right;
+}
+
+.pieArti {
+  text-align: left;
+  margin-top: 100px;
+}

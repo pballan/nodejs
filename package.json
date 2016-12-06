@@ -1,0 +1,25 @@
+{
+  "name": "meli-nodejs",
+  "version": "1.0.0",
+  "description": "Proyecto de aprendizaje y testing en Node.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mime": "~1.2.7",
+    "mu2": "^0.5.21"
+  },
+  "main": "/public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node testserver.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pballan/meli-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pballan/meli-nodejs/issues"
+  },
+  "homepage": "https://github.com/pballan/meli-nodejs#readme"
+}
