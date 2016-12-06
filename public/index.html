@@ -4,17 +4,23 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
+  <link href="css/main.css" rel="stylesheet">
   <meta charset="utf-8">
 </head>
 
 <html>
    <body>
 
-      <form action = "./recibir_datos" method = "GET">
-         Titulo : <input type = "text" name = "titulo">  <br>
-         Noticia: <input type = "text" name = "noticia">
-         <input type = "submit" value = "Submit">
-      </form>
+
+     <div class="login-page">
+       <div class="form">
+         <form action="./recibir_datos" class="login-form" method="GET">
+           <input type="text" placeholder="titulo" name="titulo"/>
+           <input type="text" placeholder="noticia" name="noticia"/>
+           <button>Cargar noticia</button>
+         </form>
+       </div>
+     </div>
 
    </body>
 </html>

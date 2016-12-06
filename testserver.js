@@ -80,6 +80,7 @@ app.get("/consulta",function(req,res){
 
 
 app.get('/recibir_datos', function (req, res) {
+
    datos = {
       noticia:req.query.noticia,
       titulo:req.query.titulo
@@ -87,7 +88,7 @@ app.get('/recibir_datos', function (req, res) {
    id++;
 
    posts[id] = datos;
-   res.end(JSON.stringify(posts));
+   res.sendFile( __dirname + "/public/index.html" );
 })
 
 
