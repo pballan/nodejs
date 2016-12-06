@@ -1,62 +1,20 @@
-<html>
 <head>
-  <title>Meameee</title>
-  <meta charset="utf-8">
-  <link href="css/main.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
-
+  <meta charset="utf-8">
 </head>
-<body>
-  <header><center><div id='titulo'></div></center></header>
-  <br>
-  <center>
-    <button type="button" class="btn btn-warning" onclick="ManejadorDeArticulos.render('arti')">Siguiente Noticia!</button>
-  </center>
 
-  </center>
-  <ul id='container'>
-    <li id='arti'>
-      <span class="col-md-12">
-        <a href='#'><h3>Nos vamos a la estratosfera!</h3></a>
-      </span>
-      <span class='col-md-8'>
-         orem ipsum dolor sit amet, est ut duis libris lobortis. Duo nisl persius et, maiorum instructior in sea. Nec te eius feugait definitionem. Duo velit molestiae ad, qui bonorum ceteros an. Duis soleat dignissim an eum, per eu diceret theophrastus. Ex sumo elit persius pri, ut error prompta imperdiet qui.
+<html>
+   <body>
 
-   Id qui novum philosophia, habeo malis sanctus no eum. Ea mollis impedit sea. Vim ex dissentiet theophrastus, error equidem qui ne. Eum harum audire et, no duo vero doctus philosophia. Has nihil volumus cu, dicit menandri duo et, eos ex timeam suscipit urbanitas.
-    </span>
+      <form action = "./recibir_datos" method = "GET">
+         Titulo : <input type = "text" name = "titulo">  <br>
+         Noticia: <input type = "text" name = "noticia">
+         <input type = "submit" value = "Submit">
+      </form>
 
-
-        <span class='col-md-4'><iframe width='300' height='250' frameborder='0' src='https://www.youtube.com/embed/p2Fnc-Iv1kE'> </iframe>
-        </span>
-
-    <li class='noticia'>
-      <span class="col-md-12">
-        <a href='#'><h3>Nos vamos a la estratosfera!</h3></a>
-      </span>
-      <span class='col-md-8'>
-         <span class='textoArticulo'>rem ipsum dolor sit amet, est ut duis libris lobortis. Duo nisl persius et, maiorum instructior in sea. Nec te eius feugait definitionem. Duo velit molestiae ad, qui bonorum ceteros an. Duis soleat dignissim an eum, per eu diceret theophrastus. Ex sumo elit persius pri, ut error prompta imperdiet qui.
-
-   Id qui novum philosophia, habeo malis sanctus no eum. Ea mollis impedit sea. Vim ex dissentiet theophrastus, error equidem qui ne. Eum harum audire et, no duo vero doctus philosophia. Has nihil volumus cu, dicit menandri duo et, eos ex timeam suscipit urbanitas.
-        </span>
-      <div class='pieArti'>
-        <h4><i>Leer más...</i></h4>
-      </div>
-      </span>
-      <span id= 'col-md-4'><img src='img/ABAF7ED5D.gif'></span>
-    </li>
-  </ul>
-
-</body>
-<footer> <button type="button" onclick="anterior()">Anterior</button><ul class='paginas'>
-<li>
-  1
-</li>
-<li>
-  2
-</li>
-</li>
-</li></ul> <button type="button" onclick="siguiente()">Siguiente</button></footer>
+   </body>
 </html>

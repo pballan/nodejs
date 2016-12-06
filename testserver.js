@@ -21,6 +21,10 @@ var visitas = 0;
 manejadorDeEventos.getUltimo = function(res){
   res.end(JSON.stringify(posts[posts.length-1]));
 };
+manejadorDeEventos.getIndex = function(res){
+  res.sendFile( __dirname + "/public/index.html" );
+}
+
 
 
 
@@ -41,7 +45,7 @@ app.use('/js', express.static(__dirname + '/public/js'));
 var errorPath = "error404.html";
 
 app.get('/', function (req, res) {
-  res.sendFile( __dirname + "/public/testapi.html" );
+  manejadorDeEventos.getIndex(res);
 })
 
 app.get('/posts/new', function (req, res) {
