@@ -2,20 +2,22 @@ var http = require('http');
 var express = require('express');
 var mysql = require('mysql');
 var manejadorDeEventos = {};
+var mu = require('mu2')
+var request = require('request');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'mysql123',
   database : 'AlarmaSys'
 });
-var request = require('request');
+
 
 
 var app = express();
 var id = 0;
 
 var server = http.createServer();
-var posts = [];
+var posts = {};
 var visitas = 0;
 
 manejadorDeEventos.getUltimo = function(res){
@@ -54,13 +56,20 @@ app.get('/posts/new', function (req, res) {
 });
 
 app.get('/posts/:id', function (req, res) {
-  var idReq = req.params.id;
 
-  res.end(JSON.stringify(posts[idReq]));
+  //var idReq = req.params.id;
+  mu.clearCache();
+  var stream = mu.compileAndRender('public/views/noticia.html', {'lalala': posts});
+  stream.pipe(res);
+
+//  res.end(JSON.stringify(posts[idReq]));
+
 });
 
 app.delete('/posts/:id', function (req, res) {
+
   res.end(JSON.stringify(posts[id]));
+
 });
 
 app.get('/index.html', function (req, res) {
@@ -69,13 +78,22 @@ app.get('/index.html', function (req, res) {
 
 
 app.get("/consulta",function(req,res){
-  connection.query('SELECT * from Cliente LIMIT 2', function(err, rows, fields) {
+  /*connection.query('SELECT * from Cliente LIMIT 2', function(err, rows, fields) {
     connection.end();
     if (!err)
       res.end(JSON.stringify(rows));
     else
       console.log('Error while performing Query.');
-  });
+  });*/
+  request.get('http://localhost:8080/menem',function(error, response, body){
+    if (!error && response.statusCode === 200) {
+      console.log(body);
+      var data = JSON.parse(body);
+      console.log(data);
+    }
+    response.end(data);
+  })
+
 });
 
 
