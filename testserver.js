@@ -4,6 +4,7 @@ var mysql = require('mysql');
 var manejadorDeEventos = {};
 var mu = require('mu2')
 var request = require('request');
+var _ = require('underscore');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
@@ -23,12 +24,10 @@ var visitas = 0;
 manejadorDeEventos.getUltimo = function(res){
   res.end(JSON.stringify(posts[posts.length-1]));
 };
+
 manejadorDeEventos.getIndex = function(res){
   res.sendFile( __dirname + "/public/index.html" );
-}
-
-
-
+};
 
 connection.connect(function(err){
   if(!err) {
@@ -48,7 +47,7 @@ var errorPath = "error404.html";
 
 app.get('/', function (req, res) {
   manejadorDeEventos.getIndex(res);
-})
+});
 
 app.get('/posts/new', function (req, res) {
   //res.end(JSON.stringify(posts[posts.length-1]));
@@ -59,10 +58,10 @@ app.get('/posts/:id', function (req, res) {
 
   //var idReq = req.params.id;
   mu.clearCache();
-  var stream = mu.compileAndRender('public/views/noticia.html', {'lalala': posts});
+  
+  var stream = mu.compileAndRender('public/views/noticia.html', {'lalala': _.values(posts)});
   stream.pipe(res);
 
-//  res.end(JSON.stringify(posts[idReq]));
 
 });
 
